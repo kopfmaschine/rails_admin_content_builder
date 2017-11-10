@@ -1,0 +1,5 @@
+de:
+  admin:
+    actions:
+      content_builder:
+        change_alt_text: "Alt Tag für das Bild eingeben"

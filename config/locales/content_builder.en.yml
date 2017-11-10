@@ -6,6 +6,7 @@ en:
         menu: "Create New"
         breadcrumb: "Create New"
         delete_block: "Do you want to remove this content?"
+        change_alt_text: "Enter alt-text for the image"
         success_save: "Successfully updated"
         error_save: "Error updating"
         written_by: "Writter By"
