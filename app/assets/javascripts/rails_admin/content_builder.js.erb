@@ -60,8 +60,6 @@ $(document).on('click', '.cb-tools__btn--set-alt-tag', function(e) {
   e.preventDefault();
 
   image = $(e.currentTarget).closest('.cb-content').find('img')
-  console.log(e);
-  console.log(image);
 
   alt_text = prompt("Alt Tag für das Bild eingeben", image.attr('alt'))
   image.attr('alt', alt_text)
