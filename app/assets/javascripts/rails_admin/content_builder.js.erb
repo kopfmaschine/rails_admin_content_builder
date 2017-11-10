@@ -55,6 +55,19 @@ $(document).on('click', '.cb-tools__btn--delete', function() {
   }
 });
 
+// when click on the alt-tag change button
+$(document).on('click', '.cb-tools__btn--set-alt-tag', function(e) {
+  e.preventDefault();
+
+  image = $(e.currentTarget).closest('.cb-content').find('img')
+  console.log(e);
+  console.log(image);
+
+  alt_text = prompt("Alt Tag für das Bild eingeben", image.attr('alt'))
+  image.attr('alt', alt_text)
+});
+
+
 // when click on tools buttons
 $(document).on('click', '.cb-tools__btn', function(e) {
   e.preventDefault();
@@ -109,12 +122,13 @@ $(document).on('click', '.cb-snippet__btn', function(e) {
 
     element += '<div class="cb-tools">';
     element += '<a class="cb-tools__btn cb-tools__btn--move fa fa-arrows" href="#"></a>';
+    element += '<a class="cb-tools__btn cb-tools__btn--set-alt-tag fa fa-question" href="#"></a>';
     element += '<a class="cb-tools__btn cb-tools__btn--delete fa fa-trash" href="#'+ id + '"></a>';
     element += '</div>';
 
     element += '<figure class="cb-figure cb-figure--left">';
     element += '<div class="cb-figure__clip">';
-    element += '<%= image_tag('cb-image-default.jpg') %>';
+    element += '<%= image_tag('cb-image-default.jpg', alt: "") %>';
     element += '<input id="'+ id +'" data-position="left" class="filePicker cb-tools__input cb-tools__input--upload" type="file" name="cb-image">';
     element += '<div class="cb-tools cb-tools--center">';
     element += '<a class="cb-tools__btn cb-tools__btn--upload fa fa-camera" href="#'+ id + '"></a>';
@@ -142,12 +156,13 @@ $(document).on('click', '.cb-snippet__btn', function(e) {
 
     element += '<div class="cb-tools">';
     element += '<a class="cb-tools__btn cb-tools__btn--move fa fa-arrows" href="#"></a>';
+    element += '<a class="cb-tools__btn cb-tools__btn--set-alt-tag fa fa-question" href="#"></a>';
     element += '<a class="cb-tools__btn cb-tools__btn--delete fa fa-trash" href="#'+ id + '"></a>';
     element += '</div>';
 
     element += '<figure class="cb-figure cb-figure--right">';
     element += '<div class="cb-figure__clip">';
-    element += '<%= image_tag('cb-image-default.jpg') %>';
+    element += '<%= image_tag('cb-image-default.jpg', alt: "") %>';
     element += '<input id="'+ id +'" data-position="right" class="filePicker cb-tools__input cb-tools__input--upload" type="file" name="cb-image">';
     element += '<div class="cb-tools cb-tools--center">';
     element += '<a class="cb-tools__btn cb-tools__btn--upload fa fa-camera" href="#'+ id + '"></a>';
@@ -175,12 +190,13 @@ $(document).on('click', '.cb-snippet__btn', function(e) {
 
     element += '<div class="cb-tools">';
     element += '<a class="cb-tools__btn cb-tools__btn--move fa fa-arrows" href="#"></a>';
+    element += '<a class="cb-tools__btn cb-tools__btn--set-alt-tag fa fa-question" href="#"></a>';
     element += '<a class="cb-tools__btn cb-tools__btn--delete fa fa-trash" href="#'+ id + '"></a>';
     element += '</div>';
 
     element += '<figure class="cb-figure cb-figure--center">';
     element += '<div class="cb-figure__clip">';
-    element += '<%= image_tag('cb-image-default.jpg') %>';
+    element += '<%= image_tag('cb-image-default.jpg', alt: "") %>';
     element += '<input id="'+ id +'" data-position="center" class="filePicker cb-tools__input cb-tools__input--upload" type="file" name="cb-image">';
     element += '<div class="cb-tools cb-tools--center">';
     element += '<a class="cb-tools__btn cb-tools__btn--upload fa fa-camera" href="#'+ id + '"></a>';
